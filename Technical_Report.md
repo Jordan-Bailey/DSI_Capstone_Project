@@ -3,7 +3,7 @@
 Problem: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
 set by Las Vegas casinos. In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can discern some advantage/confidence in predicting these total bets, and then create a strategy to profit off of this information. 
 
-Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. 
+Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
 
 With this dataset, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
 
@@ -19,15 +19,18 @@ Feature Engineering/Accounting for Time Series: I caluculated a few features for
 
 To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
-- A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games wh 
 
 Exploratory Data Analysis: 
 - The game totals were mostly normally distributed, with a mean around 195.
-- There were 
+- My baseline scores for each class 
 
 EDA Plotting:
 
-Modeling: I chose a few different types of models 
+Modeling: I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Here are my results:
+
+- A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games where I had a push occurred, as stated in my EDA, 1.4% of the time. Because pushes represented a small percentage of the outcomes, and it's outcome is more of a null factor than a win or a loss in terms of the money bet, I decided to not explicitly encode for pushes in my model, instead opting to encode them as "not-wins."
+
+
 
 Model Interpretation/Plotting: (Tables)
 
@@ -39,5 +42,6 @@ Although I was able to achieve a predictive capability with my model high enough
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
 - I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
+- An ensemble model may be able
 
 
