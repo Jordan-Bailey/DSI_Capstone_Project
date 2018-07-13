@@ -9,6 +9,8 @@ With this dataset, I was able to create a list of dates which NBA games were pla
 
 Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
 
+In 2015 season, the second in my data, the Charlotte Bobcats changes their name to the Charlotte Hornets. I addition, the team slug changed as well, from "CHA" to "CHO." This change caused me some problems, so when cleaning my data, I had to make sure that any reference to a team or team slug accounted for this change.
+
 
 Feature Engineering/Accounting for Time Series: I caluculated a few features for my dataset. I calculated whether each game ended up being an over, an under, or a push(final score same as total line), and used these features as my response variables. I wanted a metric that was representative of a team's total 
 
