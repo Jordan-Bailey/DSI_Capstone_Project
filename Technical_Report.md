@@ -32,6 +32,11 @@ Exploratory Data Analysis:
 
 EDA Plotting:
 
+![][distribution]
+
+[distribution]
+/Notebooks/download.png
+
 Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
 
 I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Becuase I am cross-validating my models, I need to account for the time series component when training my models. To do this, I used the TimeSeriesSplit module to properly cross-validate my training data. 
