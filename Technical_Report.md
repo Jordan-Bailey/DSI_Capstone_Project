@@ -88,6 +88,8 @@ Everybody who gambles is looking for an edge. Through an exploration of using ba
 
 Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. 
 
+
+
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
 - I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
