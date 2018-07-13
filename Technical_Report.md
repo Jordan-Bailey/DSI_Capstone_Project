@@ -32,9 +32,11 @@ Exploratory Data Analysis:
 
 EDA Plotting:
 
-Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 season in my training data, and putting the last season in my testing data to make predictions on. 
+Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
 
-I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Becuase I am cross-validating my models, I need to account for the time series component when training my models. To do this, I used the TimeSeriesSplit module to properly cross-validate my training data.
+I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Becuase I am cross-validating my models, I need to account for the time series component when training my models. To do this, I used the TimeSeriesSplit module to properly cross-validate my training data. 
+
+Principal Component Analysis was not useful working with my dataset, it did not perform better than other model that I used.
 
 Here are my results:
 
@@ -84,7 +86,7 @@ The model which performed the best out of those I tested was my GridSearched Log
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
 
-Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class).
+Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. 
 
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
