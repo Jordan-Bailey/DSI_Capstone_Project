@@ -93,7 +93,8 @@ Everybody who gambles is looking for an edge. Through an exploration of using ba
 
 Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. 
 
-![image.png](attachment:image.png)
+![][pooled]
+[pooled]: 
 
 
 Stretch Goals: 
