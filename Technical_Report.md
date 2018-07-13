@@ -73,13 +73,12 @@ Here are my results:
 
 Model Interpretation/Plotting: 
 
-The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped.
-
+The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped. Using SelectFromModel, I was left with 228 features.
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
 
-Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low, 
+Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class).
 
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
