@@ -39,12 +39,30 @@ Here are my results:
 |  Logistic Regression (Over Bets) |        0.552        |        0.511       |
 | Logistic Regression (Under Bets) |        0.563        |        0.514       |
 
-- Random Forest Classifier (All features, GridSearched over)
+- Random Forest Classifier (All features, GridSearch)
 
 |     (Scoring: ROC-AUC)     | Training Data Score | Testing Data Score |
 |:--------------------------:|:-------------------:|:------------------:|
 |  Random Forest (Over Bets) |        0.715        |        0.517       |
 | Random Forest (Under Bets) |        0.993        |        0.487       |
+
+- Logistic Regression (w/ select 150 KBest features, GridSearch)
+
+|          (Scoring: ROC-AUC, Features: 150)         | Training Data Score | Testing Data Score |
+|:--------------------------------------------------:|:-------------------:|:------------------:|
+|  Logistic Regression w/ KBest Features (Over Bets) |        0.571        |        0.520       |
+| Logistic Regression w/ KBest Features (Under Bets) |        0.572        |        0.530       |
+
+- Logistic Regression (w/ Principal Component Analysis, GridSearch)
+
+|            (Scoring: ROC-AUC)           | Training Data Score | Testing Data Score |
+|:---------------------------------------:|:-------------------:|:------------------:|
+|  Logistic Regression w/ PCA (Over Bets) |        0.557        |        0.505       |
+| Logistic Regression w/ PCA (Under Bets) |        0.556        |        0.508       |
+
+- Logistic Regression (w/ SelectFromModel features, Gridsearch)
+
+
 
 - A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games where I had a push occurred, as stated in my EDA, 1.4% of the time. Because pushes represented a small percentage of the outcomes, and it's outcome is more of a null factor than a win or a loss in terms of the money bet, I decided to not explicitly encode for pushes in my model, instead opting to encode them as "not-wins."
 
@@ -60,6 +78,6 @@ Although I was able to achieve a predictive capability with my model high enough
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
 - I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
-- An ensemble model may be able
+- An ensemble model may be able to take the various predictions returned by the models I created, in addition to others, and return a more confident prediction on certain games. I'm unsure how much optimization can be done on this dataset to maximize prediction confidence, however, because of the lack of significant correlation between the features and the target.
 
 
