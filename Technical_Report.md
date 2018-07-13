@@ -7,9 +7,11 @@ Data: I decided to analyze the past 5 season of NBA games for the purposes of th
 
 With this dataset, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
 
-Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
-
-In 2015 season, the second in my data, the Charlotte Bobcats changes their name to the Charlotte Hornets. I addition, the team slug changed as well, from "CHA" to "CHO." This change caused me some problems, so when cleaning my data, I had to make sure that any reference to a team or team slug accounted for this change.
+Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. 
+- There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. 
+- There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
+- In 2015 season, the second in my data, the Charlotte Bobcats changes their name to the Charlotte Hornets. I addition, the team slug changed as well, from "CHA" to "CHO." This change caused me some problems, so when cleaning my data, I had to make sure that any reference to a team or team slug accounted for this change.
+- I got the date for each game by splitting on the values in my 'gid' column. I then used the dates, as well as the team slugs, to merge the games dataframe and the betting lines dataframe.
 
 
 Feature Engineering/Accounting for Time Series: I caluculated a few features for my dataset. I calculated whether each game ended up being an over, an under, or a push(final score same as total line), and used these features as my response variables. I wanted a metric that was representative of a team's total 
