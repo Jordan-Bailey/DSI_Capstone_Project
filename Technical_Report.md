@@ -28,6 +28,13 @@ EDA Plotting:
 
 Modeling: I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Here are my results:
 
+- Logistic Regression (All features)
+|   (Scoring: Negative Log Loss)   | Training Data Score | Testing Data Score |   |   |
+|:--------------------------------:|:-------------------:|:------------------:|---|---|
+|  Logistic Regression (Over Bets) |        0.552        |        0.511       |   |   |
+| Logistic Regression (Under Bets) |        0.563        |        0.514       |   |   |
+|                                  |                     |                    |   |   |
+
 - A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games where I had a push occurred, as stated in my EDA, 1.4% of the time. Because pushes represented a small percentage of the outcomes, and it's outcome is more of a null factor than a win or a loss in terms of the money bet, I decided to not explicitly encode for pushes in my model, instead opting to encode them as "not-wins."
 
 
