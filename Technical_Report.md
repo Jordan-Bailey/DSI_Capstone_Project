@@ -62,13 +62,19 @@ Here are my results:
 
 - Logistic Regression (w/ SelectFromModel features, Gridsearch)
 
-
+|    (Scoring: ROC-AUC, Features: SelectFromModel)    | Training Data Score | Testing Data Score |
+|:---------------------------------------------------:|:-------------------:|:------------------:|
+|  Logistic Regression w/ SelectFromModel (Over Bets) |        0.586        |        0.528       |
+| Logistic Regression w/ SelectFromModel (Under Bets) |        0.584        |        0.530       |
 
 - A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games where I had a push occurred, as stated in my EDA, 1.4% of the time. Because pushes represented a small percentage of the outcomes, and it's outcome is more of a null factor than a win or a loss in terms of the money bet, I decided to not explicitly encode for pushes in my model, instead opting to encode them as "not-wins."
 
 
 
-Model Interpretation/Plotting: (Tables)
+Model Interpretation/Plotting: 
+
+The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped.
+
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
