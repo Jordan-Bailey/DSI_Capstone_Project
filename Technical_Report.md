@@ -7,7 +7,8 @@ Data: I decided to analyze the past 5 season of NBA games for the purposes of th
 
 With this dataset, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
 
-Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. 
+Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
+
 
 Feature Engineering/Accounting for Time Series: I caluculated a few features for my dataset. I calculated whether each game ended up being an over, an under, or a push(final score same as total line), and used these features as my response variables. I wanted a metric that was representative of a team's total 
 
@@ -17,14 +18,15 @@ Exploratory Data Analysis:
 
 EDA Plotting:
 
-Modeling
+Modeling: I chose a few different types of models 
 
 Model Interpretation/Plotting:
 
 Conclusion:
+Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to extreme inconsistency from a game to game perspective. 
 
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
-- 
+- I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
 
 
