@@ -34,8 +34,7 @@ EDA Plotting:
 
 ![][distribution]
 
-[distribution]
-/Notebooks/download.png
+[distribution]:(download.png)
 
 
 Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
