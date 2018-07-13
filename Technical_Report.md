@@ -24,7 +24,7 @@ EDA Plotting:
 
 Modeling: I chose a few different types of models 
 
-Model Interpretation/Plotting:
+Model Interpretation/Plotting: (Tables)
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to extreme inconsistency from a game to game perspective. 
