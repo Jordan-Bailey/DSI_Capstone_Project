@@ -12,13 +12,18 @@ Data Cleaning: The dataset of box scores from basketball-reference.com, and the 
 - There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
 - In 2015 season, the second in my data, the Charlotte Bobcats changes their name to the Charlotte Hornets. I addition, the team slug changed as well, from "CHA" to "CHO." This change caused me some problems, so when cleaning my data, I had to make sure that any reference to a team or team slug accounted for this change.
 - I got the date for each game by splitting on the values in my 'gid' column. I then used the dates, as well as the team slugs, to merge the games dataframe and the betting lines dataframe.
+- I conducted Regex string matching on the betting lines to change the '1/2' symbol, which because of it's encoding was being picked up by Jupyter Notebook as a special character, to a '.5,' for all the betting lines.
 
 
 Feature Engineering/Accounting for Time Series: I caluculated a few features for my dataset. I calculated whether each game ended up being an over, an under, or a push(final score same as total line), and used these features as my response variables. I wanted a metric that was representative of a team's total 
 
 To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
+- A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games wh 
+
 Exploratory Data Analysis: 
+- The game totals were mostly normally distributed, with a mean around 195.
+- There were 
 
 EDA Plotting:
 
@@ -27,7 +32,7 @@ Modeling: I chose a few different types of models
 Model Interpretation/Plotting: (Tables)
 
 Conclusion:
-Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to extreme inconsistency from a game to game perspective. 
+Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
 
 Stretch Goals: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
