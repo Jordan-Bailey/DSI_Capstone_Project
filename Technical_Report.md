@@ -29,6 +29,7 @@ EDA Plotting:
 Modeling: I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Here are my results:
 
 - Logistic Regression (All features)
+
 |   (Scoring: Negative Log Loss)   | Training Data Score | Testing Data Score |   |   |
 |:--------------------------------:|:-------------------:|:------------------:|---|---|
 |  Logistic Regression (Over Bets) |        0.552        |        0.511       |   |   |
