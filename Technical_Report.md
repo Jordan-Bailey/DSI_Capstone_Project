@@ -1,11 +1,13 @@
 ## Predicting Totals Bets for NBA Games
 
 Problem: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
-set by Las Vegas casinos. In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can discern some advantage/confidence in predicting these total bets, and then create a strategy to profit off of this information. 
+set by Las Vegas casinos. In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can in predicting these total bets, return a number of what I will term "confident bets," and then create a strategy to profit off of this information. 
+
 
 Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
 
-With this dataset, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
+With a dataset comprised of the past 5 seasons of NBA game data, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
+
 
 Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. 
 - There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. 
@@ -15,9 +17,13 @@ Data Cleaning: The dataset of box scores from basketball-reference.com, and the 
 - I conducted Regex string matching on the betting lines to change the '1/2' symbol, which because of it's encoding was being picked up by Jupyter Notebook as a special character, to a '.5,' for all the betting lines.
 
 
-Feature Engineering/Accounting for Time Series: I caluculated a few features for my dataset. I calculated whether each game ended up being an over, an under, or a push(final score same as total line), and used these features as my response variables. I wanted a metric that was representative of a team's total 
+Feature Engineering/Accounting for Time Series: I caluculated a few additional features for my dataset, on top of the box scores stats I scraped off of basketball-reference. 
 
-To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
+- I calculated whether each game ended up being an over, an under, or a push(final score same as total line), by subtracting the book's point total and subtracting that from the actual game total. I used these features as my target variables. 
+
+- To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
+
+- I imputed an offensive rating for each team for each game. Offensive rating is an "advanced" statistic (called advanced because it is not a counting stat) which is a summary metric for a team's offensive performance in a game. I imputed this statistic in the hopes it would capture much of the variability present in my other offensive statistics (points, rebounds, assists, etc.)
 
 
 Exploratory Data Analysis: 
