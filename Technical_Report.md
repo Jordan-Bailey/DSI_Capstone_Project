@@ -1,7 +1,9 @@
 ## Predicting Totals Bets for NBA Games
 
 Problem: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
-set by Las Vegas casinos. In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can in predicting these total bets, return a number of what I will term "confident bets," and then create a strategy to profit off of this information. 
+set by Las Vegas casinos. 
+
+In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can in predicting these total bets, return a number of what I will term "confident bets," and then create a strategy to profit off of this information. 
 
 
 Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
