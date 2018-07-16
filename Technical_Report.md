@@ -3,15 +3,20 @@
 Problem: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
 set by Las Vegas casinos. 
 
-In sports betting, a bookkeaper will create a bet called a total on most team games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeaper, or you can bet an "Under," a number at which the bookkeaper believes will create action for both "Over" bets and "Under" bets. The goal of this project is to create a model which can in predicting these total bets, return a number of what I will term "confident bets," and then create a strategy to profit off of this information. 
+In sports betting, a bookkeeper will create a bet called a total on NBA games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or you can bet an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
+
+The goal of this project is to create a model which return a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
 
 
-Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
+Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. 
 
-With a dataset comprised of the past 5 seasons of NBA game data, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
+- For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
+
+- With a dataset comprised of the past 5 seasons of NBA game data, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
 
 
 Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. 
+
 - There were missing betting lines for a few games; to rectify this I went to additional gambling websites with historical data to manually look up the lines for these games. 
 - There was also one game missing entirely from the gambling data, which I then imputed (Miami-Washington, 03/06/2015)
 - In 2015 season, the second in my data, the Charlotte Bobcats changes their name to the Charlotte Hornets. I addition, the team slug changed as well, from "CHA" to "CHO." This change caused me some problems, so when cleaning my data, I had to make sure that any reference to a team or team slug accounted for this change.
@@ -23,10 +28,9 @@ Feature Engineering: I caluculated a few additional features for my dataset, on 
 
 - I calculated whether each game ended up being an over, an under, or a push(final score same as total line), by subtracting the book's point total and subtracting that from the actual game total. I used these features as my target variables. 
 
-
 - I imputed an offensive rating for each team for each game. Offensive rating is an "advanced" statistic (called advanced because it is not a counting stat) which is a summary metric for a team's offensive performance in a game. I imputed this statistic in the hopes it would capture much of the variability present in my other offensive statistics (points, rebounds, assists, etc.)
 
-Accounting for Time Series:
+Accounting for Time Series Data:
 
 - To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing in the day's game. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
@@ -34,16 +38,26 @@ Accounting for Time Series:
 Exploratory Data Analysis: 
 - The game totals were mostly normally distributed, with a mean around 195.
 
-- The offensive rating
+![][distribution]
+
+[distribution]: download.png
+
+- The offensive rating statistic for a single game appears to be highly correlated with a game's total score. This observation make sense intuitively (The better a team is performing offensively, the higher the score of a game should be). Due to the correlation, I'm guessing the offensive rating of previous games will have a statistically significant impact on the game totals for a future game.
+
+![][heat]
+
+[heat]: heat_map.png
 
 
 - My baseline scores for each class 
 
+![][frequency]
+
+[frequency]: frequency_of_outcomes.png
+
 EDA Plotting:
 
-![][distribution]
 
-[distribution]: download.png
 
 
 Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
