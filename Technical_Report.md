@@ -36,9 +36,6 @@ Exploratory Data Analysis:
 
 - The offensive rating
 
-![][heat]
-
-[heat]: heat_map.png
 
 - My baseline scores for each class 
 
