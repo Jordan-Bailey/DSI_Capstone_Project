@@ -37,9 +37,9 @@ Exploratory Data Analysis:
 - My most highly correlated
 
 
-![][frequency]
+![][distribution]
 
-[frequency]: frequency_of_outcomes.png
+[distribution]: frequency_of_outcomes.png
 
 
 - My baseline scores for each class 
