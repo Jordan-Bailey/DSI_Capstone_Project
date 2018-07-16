@@ -120,3 +120,4 @@ Stretch Goals:
 - An ensemble model may be able to take the various predictions returned by the models I created, in addition to others, and return a more confident prediction on certain games. I'm unsure how much optimization can be done on this dataset to maximize prediction confidence, however, because of the lack of significant correlation between the features and the target.
 
 
+
