@@ -99,6 +99,10 @@ The model which performed the best out of those I tested was my GridSearched Log
 
 The features with the greatest importance in my model were 
 
+![][under]
+
+[under]: under_bet_graph.png
+
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
