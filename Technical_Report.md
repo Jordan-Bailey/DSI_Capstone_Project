@@ -49,15 +49,11 @@ Exploratory Data Analysis:
 [heat]: heat_map.png
 
 
-- My baseline scores for each class 
+- My baseline scores for each class of outcomes, Over, Under, and Push, for the past 5 NBA seasons, are represented in the below plot. Pushes occur much more infrequently than the other outcomes, occurring in about 1.4% of games.
 
 ![][frequency]
 
 [frequency]: frequency_of_outcomes.png
-
-EDA Plotting:
-
-
 
 
 Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
@@ -111,21 +107,45 @@ Model Interpretation/Plotting:
 
 The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped. Using SelectFromModel, I was left with 228 features.
 
-The features with the greatest importance in my model were 
+The features with the greatest importance in my model are shown below:
+
+|    Features    | ft_1_3_opp | ft_1_3 | fga_1_1_opp | fga_1_1 | fg%_1_1 | fg%_1_1_opp | off_rating_2_1 |
+|:--------------:|:----------:|:------:|-------------|---------|---------|-------------|----------------|
+| Feature Weight | 0.1918     | 0.1918 | 0.1875      | 0.1875  | 0.1693  | 0.1693      | 0.1577         |
+
+
+|    Features    | fta_1_3_opp | fta_1_3 | pts_2_1_opp | pts_2_1 | game_total_score_1 | game_total_score_1_opp | fta_2_3 |
+|:--------------:|:-----------:|:-------:|-------------|---------|--------------------|------------------------|---------|
+| Feature Weight | -0.2197     | -0.2197 | -0.1873     | -0.1873 | -0.1590            | -0.1590                | -0.1551 |
+
+- Interesting that the game total score for the previous game takes on a negative weight in my model. An explanation I have is that my model is picking up variability with the total lines, in the sense that a bookkeeper may be setting the lines somewhat high for a game in response to a big offensive performance in the previous game, and vice versa. Although this explanation is just theory at the moment, it is my best guess for how my model is behaving.
+
+
+Below are the plots of my confident bet predictions, shown as how the predictions change as the threshold for what is considered "confident" is changed. The line at 54% for the mean of confident predictions represents a level below which betting on the confident predictions would not return money. The baseline for predicting the total of a game stands at around 49% for both overs and unders. Considering a typical bet, where one bets $105 to win $100, 54% represents a level at which the number of confident bets that win overcomes the loss of money from the terms of the bet.
 
 ![][under]
 
 [under]: under_bet_graph.png
 
 
-Conclusion:
-Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
+![][over]
 
-Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. 
+[over]: over_bet_graph.png
+
+
+
+As shown in my modeling notebook, I created a basic simulation, combining the predictions for each game in the 2018 NBA season. Starting with $10,000, and making a bet each time my models predicted a confident bet, I show how my model performs informing a betting strategy over the course of the season
 
 ![][pooled]
 
 [pooled]: pooled_bets_graph.png
+
+
+Conclusion:
+Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
+
+Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. While this figure is significant, for a professional sports gambler who may want to be in the action constantly, I doubt this model can be used as a the comprehensive model for creating a betting strategy.
+
 
 
 Stretch Goals: 
