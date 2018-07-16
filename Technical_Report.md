@@ -34,13 +34,11 @@ Accounting for Time Series:
 Exploratory Data Analysis: 
 - The game totals were mostly normally distributed, with a mean around 195.
 
-- My most highly correlated
+- The offensive rating
 
+![][heat]
 
-![][distributions]
-
-[distributions]: frequency_of_outcomes.png
-
+[heat]: heat_map.png
 
 - My baseline scores for each class 
 
@@ -103,6 +101,7 @@ Model Interpretation/Plotting:
 The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped. Using SelectFromModel, I was left with 228 features.
 
 The features with the greatest importance in my model were 
+
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
