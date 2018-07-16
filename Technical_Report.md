@@ -19,17 +19,27 @@ Data Cleaning: The dataset of box scores from basketball-reference.com, and the 
 - I conducted Regex string matching on the betting lines to change the '1/2' symbol, which because of it's encoding was being picked up by Jupyter Notebook as a special character, to a '.5,' for all the betting lines.
 
 
-Feature Engineering/Accounting for Time Series: I caluculated a few additional features for my dataset, on top of the box scores stats I scraped off of basketball-reference. 
+Feature Engineering: I caluculated a few additional features for my dataset, on top of the box scores stats I scraped off of basketball-reference. 
 
 - I calculated whether each game ended up being an over, an under, or a push(final score same as total line), by subtracting the book's point total and subtracting that from the actual game total. I used these features as my target variables. 
 
-- To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
 - I imputed an offensive rating for each team for each game. Offensive rating is an "advanced" statistic (called advanced because it is not a counting stat) which is a summary metric for a team's offensive performance in a game. I imputed this statistic in the hopes it would capture much of the variability present in my other offensive statistics (points, rebounds, assists, etc.)
+
+Accounting for Time Series:
+
+- To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing in the day's game. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
 
 Exploratory Data Analysis: 
 - The game totals were mostly normally distributed, with a mean around 195.
+
+- My most highly correlated
+
+![][frequency]
+
+[frequency]: frequency_of_outcomes.png
+
 - My baseline scores for each class 
 
 EDA Plotting:
@@ -89,6 +99,8 @@ Here are my results:
 Model Interpretation/Plotting: 
 
 The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped. Using SelectFromModel, I was left with 228 features.
+
+The features with the greatest importance in my model were 
 
 Conclusion:
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
