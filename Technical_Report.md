@@ -36,7 +36,7 @@ Accounting for Time Series Data:
 
 
 Exploratory Data Analysis: 
-- The game totals were mostly normally distributed, with a mean around 195.
+- The game totals over all 5 seasons were mostly normally distributed, with a mean around 195.
 
 ![][distribution]
 
