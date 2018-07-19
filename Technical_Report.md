@@ -46,7 +46,7 @@ Exploratory Data Analysis:
 
 ![][heat]
 
-[heat]: heat_map.png
+[heat]: technical_report_graphs/heat_map.png
 
 
 - My baseline scores for each class of outcomes, Over, Under, and Push, for the past 5 NBA seasons, are represented in the below plot. Pushes occur much more infrequently than the other outcomes, occurring in about 1.4% of games.
