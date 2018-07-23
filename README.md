@@ -6,16 +6,16 @@ Data:
 
 Notebooks:
 
- - Notebook 1: Acquiring Data from Basketball-Reference.com, [Notebook 1](notebooks_dataframes/1_NBA_games_scrape.ipynb)
+ - [Notebook 1](notebooks_dataframes/1_NBA_games_scrape.ipynb): Acquiring Data from Basketball-Reference.com 
 
- - Notebook 2: 
+ - [Notebook 2](notebooks_dataframes/2_Betting_Lines_Scrape.ipynb): Acquiring Data from Sports Book Review
 
  - Notebook 3: Dataframe Merging
 
-Notebook 4: EDA/Time Series Analysis
+ - Notebook 4: EDA/Time Series Analysis
 
-Notebook 5: Extended EDA
+ - Notebook 5: Extended EDA
 
-Notebook 6: Modeling
+ - Notebook 6: Modeling
 
 
