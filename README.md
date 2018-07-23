@@ -1,4 +1,6 @@
-This is my working capstone.
+This is the README  for my capstone project.
+
+Data: !../raw_data_files
 
 Notebooks:
 
