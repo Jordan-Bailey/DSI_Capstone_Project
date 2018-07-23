@@ -1,6 +1,6 @@
 This is the README for my capstone project. Provided are links to each notebook in my project, as well as the locations for my data.
 
-Data: ![Data Source](../raw_data_files/)
+Data: ![Data Source](!../raw_data_files/)
 
 Technical Report: 
 
