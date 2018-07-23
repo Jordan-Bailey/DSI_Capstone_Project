@@ -1,8 +1,8 @@
 This is the README for my capstone project.
 
 Data: 
- - NBA Box Scores: ![Basketball Reference](https://www.basketball-reference.com/)
- - Historical Betting Lines: ![Sports Book Review](https://www.sportsbookreview.com/)
+ - NBA Box Scores: [Basketball Reference](https://www.basketball-reference.com/)
+ - Historical Betting Lines: [Sports Book Review](https://www.sportsbookreview.com/)
 
 Technical Report: 
 
