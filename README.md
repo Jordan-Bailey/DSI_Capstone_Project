@@ -1,6 +1,8 @@
-This is the README for my capstone project. Provided are links to each notebook in my project, as well as the locations for my data.
+This is the README for my capstone project.
 
-Data: ![Data Source](..master/raw_data_files/)
+Data: 
+ - NBA Box Scores: ![Basketball Reference](https://www.basketball-reference.com/)
+ - Historical Betting Lines: ![Sports Book Review](https://www.sportsbookreview.com/)
 
 Technical Report: 
 
