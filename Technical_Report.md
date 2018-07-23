@@ -40,7 +40,7 @@ Exploratory Data Analysis:
 
 ![][distribution]
 
-[distribution]: download.png
+[distribution]: technical_report_graph/download.png
 
 - The offensive rating statistic for a single game appears to be highly correlated with a game's total score. This observation make sense intuitively (The better a team is performing offensively, the higher the score of a game should be). Due to the correlation, I'm guessing the offensive rating of previous games will have a statistically significant impact on the game totals for a future game.
 
