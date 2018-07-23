@@ -6,7 +6,7 @@ Data:
 
 Notebooks:
 
- - Notebook 1: Acquiring Data from Basketball-Reference.com, [Notebook 1](../notebooks_dataframes/1_NBA_games_scrape.ipynb)
+ - Notebook 1: Acquiring Data from Basketball-Reference.com, [Notebook 1](notebooks_dataframes/1_NBA_games_scrape.ipynb)
 
  - Notebook 2: 
 
