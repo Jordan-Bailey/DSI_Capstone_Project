@@ -1,11 +1,19 @@
-This is the README  for my capstone project.
+This is the README for my capstone project. Provided are links to each notebook in my project, as well as the locations for my data.
 
 Data: !../raw_data_files
 
 Notebooks:
 
-Notebook 1: Acquiring Data from Basketball reference
+Notebook 1: Acquiring Data from Basketball-Reference.com
 
+Notebook 2: 
 
 Notebook 3: Dataframe Merging
- - Make sure to change labels for clarity sake, Home and Away teams should really be teams 1 and 2, because you've already accounted for home with the "home" indicator
+
+Notebook 4: EDA/Time Series Analysis
+
+Notebook 5: Extended EDA
+
+Notebook 6: Modeling
+
+
