@@ -10,12 +10,12 @@ Notebooks:
 
  - [Notebook 2](notebooks_dataframes/2_Betting_Lines_Scrape.ipynb): Acquiring Data from Sports Book Review
 
- - Notebook 3: Dataframe Merging
+ - [Notebook 3](noteboooks_dataframes/3_Dataframe_cleaning_merging.ipynb): Dataframe Cleaning/Merging
 
- - Notebook 4: EDA/Time Series Analysis
+ - [Notebook 4](notebooks_dataframes/4_EDA_Time_Series_Notebook.ipynb): EDA/Time Series Analysis
 
- - Notebook 5: Extended EDA
+ - [Notebook 5](notebooks_dataframes/5_EDA_pt_2.ipynb): Extended EDA
 
- - Notebook 6: Modeling
+ - [Notebook 6](notebooks_dataframes/6_Modeling.ipynb): Modeling
 
 
