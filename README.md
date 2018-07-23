@@ -1,4 +1,4 @@
-This page is the README for my capstone project. This README will provide references to the locations For a detailed ealkthrough of my project, please see the Technical Report [Technical Report](technical_report.md)
+This page is the README for my capstone project. This README will provide references to the locations For a detailed ealkthrough of my project, please see the Technical Report [Technical Report](Technical_Report.md)
 
 Data: 
  - NBA Box Scores: [Basketball Reference](https://www.basketball-reference.com/)
