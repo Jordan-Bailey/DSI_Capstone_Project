@@ -2,6 +2,8 @@ This is the README for my capstone project. Provided are links to each notebook 
 
 Data: !../raw_data_files
 
+Technical Report: 
+
 Notebooks:
 
 Notebook 1: Acquiring Data from Basketball-Reference.com
