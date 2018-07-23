@@ -8,7 +8,7 @@ Notebooks:
 
  - [Notebook 1](notebooks_dataframes/1_NBA_games_scrape.ipynb): Acquiring Data from Basketball-Reference.com 
 
- - [Notebook 2](notebooks_dataframes/2_Betting_Lines_Scrape.ipynb): Acquiring Data from Sports Book Review
+ - [Notebook 2](notebooks_dataframes/2_Betting_Lines_Scrape.ipynb): Acquiring Data from Sports-Book-Review.com
 
  - [Notebook 3](noteboooks_dataframes/3_Dataframe_cleaning_merging.ipynb): Dataframe Cleaning/Merging
 
