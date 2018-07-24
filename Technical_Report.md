@@ -9,7 +9,7 @@ set by Las Vegas casinos.
 
 In sports betting, a bookkeeper will create a bet called a total on NBA games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or you can bet an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
 
-The goal of this project is to create a model which return a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
+The goal of this project is to create a model which returns a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
 
 
 Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. 
