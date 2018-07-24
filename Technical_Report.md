@@ -3,6 +3,8 @@
 Outline:
 - [Introduction](#intro)
 - [Dataset](#data)
+- [Feature Engineering/EDA](#eda)
+- [Modeling](#model)
 - [Conclusion](#conclusion)
 
 <a id = 'intro'></a>
@@ -16,7 +18,7 @@ The goal of this project is to create a model which returns a prediction on whet
 
 <a id = 'data'></a>
 ### Data
-I decided to analyze the past 5 season of NBA games for the purposes of this project. 
+I decided to analyze the past 5 season of NBA games for the purposes of this project. There are 82 games in an NBA season, and 30 teams in the league; I collected data for 6150 games in total. I wanted to collect the the  
 
 - For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
 
@@ -31,8 +33,10 @@ Data Cleaning: The dataset of box scores from basketball-reference.com, and the 
 - I got the date for each game by splitting on the values in my 'gid' column. I then used the dates, as well as the team slugs, to merge the games dataframe and the betting lines dataframe.
 - I conducted Regex string matching on the betting lines to change the '1/2' symbol, which because of it's encoding was being picked up by Jupyter Notebook as a special character, to a '.5,' for all the betting lines.
 
+<a id = 'eda'></a>
+### Feature Engineering/EDA
 
-Feature Engineering: I caluculated a few additional features for my dataset, on top of the box scores stats I scraped off of basketball-reference. 
+I caluculated a few additional features for my dataset, on top of the box scores stats I scraped off of basketball-reference. 
 
 - I calculated whether each game ended up being an over, an under, or a push(final score same as total line), by subtracting the book's point total and subtracting that from the actual game total. I used these features as my target variables. 
 
@@ -43,7 +47,8 @@ Accounting for Time Series Data:
 - To predict the total score for a game, I decided to impute each game as the representation of the three games prior for each team playing in the day's game. I decided against using a rolling mean because I wanted to capture more of the game-to-game variability present in the data.
 
 
-Exploratory Data Analysis: 
+#### Exploratory Data Analysis
+
 - The game totals over all 5 seasons were mostly normally distributed, with a mean around 195.
 
 ![][distribution]
@@ -63,8 +68,9 @@ Exploratory Data Analysis:
 
 [frequency]: frequency_of_outcomes.png
 
-
-Modeling: When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
+<a id = 'model'></a>
+### Modeling 
+When splitting my data into training and testing sets, I split on the seasons, putting the first 4 seasons in my training data, and putting the last season in my testing data to make predictions on. 
 
 I chose a few different types of models, chief among them Logistic Regression and Random Forest Classifier models. Becuase I am cross-validating my models, I need to account for the time series component when training my models. To do this, I used the TimeSeriesSplit module to properly cross-validate my training data. 
 
@@ -110,8 +116,7 @@ Here are my results:
 - A note on the bets-won columns that I'm predicting on. I decieded not to account for pushes when predicting the probablity of an outcome occurring for a game. A push occurs when the result of a game or event lands right on the listed point spread, or the game ends in a draw. For my data, a push refers to the situation where a game's point total is equal to the bookie's listed point total. In the case of a push, the bet is considered as if it had never happened, and all of the money gambled is returned. In my observed dataset, games where I had a push occurred, as stated in my EDA, 1.4% of the time. Because pushes represented a small percentage of the outcomes, and it's outcome is more of a null factor than a win or a loss in terms of the money bet, I decided to not explicitly encode for pushes in my model, instead opting to encode them as "not-wins."
 
 
-
-Model Interpretation/Plotting: 
+#### Model Interpretation/Plotting: 
 
 The model which performed the best out of those I tested was my GridSearched Logistic Regression Model, with feature selection done by SelectFromModel. SelectFromModel is a method of feature selection which chooses the most important features from a model based on their importance weights. A feature with a level of importance smaller than a given threshold will be dropped. Using SelectFromModel, I was left with 228 features.
 
@@ -148,15 +153,15 @@ As shown in my modeling notebook, I created a basic simulation, combining the pr
 
 [pooled]: pooled_bets_graph.png
 
-
-Conclusion:
+<a id = 'conclusion'></a>
+### Conclusion
 Everybody who gambles is looking for an edge. Through an exploration of using basic machine learning models to predict the total score of a game, as it relates to betting lines, I have learned a good deal about how inherently difficult it is to model this problem, due to inconsistency from a game to game perspective, and also how efficient the methods have become for setting these lines. 
 
 Although I was able to achieve a predictive capability with my model high enough to win money using it to bet game totals, I think that the rate of confident predictions is a bit low. There were 184 "confident predictions" (for the purpose of this model, here confident means prediction was > 60% confident in picking the winning class). Because I have each game duplicated for the purposes of capturing each team's perspective on a game, I will be able to make "confident" bets on 92 games. While this figure is significant, for a professional sports gambler who may want to be in the action constantly, I doubt this model can be used as a the comprehensive model for creating a betting strategy.
 
 
 
-Stretch Goals: 
+#### Next Steps: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
 - I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
 - An ensemble model may be able to take the various predictions returned by the models I created, in addition to others, and return a more confident prediction on certain games. I'm unsure how much optimization can be done on this dataset to maximize prediction confidence, however, because of the lack of significant correlation between the features and the target.
