@@ -147,11 +147,13 @@ Below are the plots of my confident bet predictions, shown as how the prediction
 
 
 
-As shown in my modeling notebook, I created a basic simulation, combining the predictions for each game in the 2018 NBA season. Starting with $10,000, and making a bet each time my models predicted a confident bet, I show how my model performs informing a betting strategy over the course of the season
+#### Simulation
+
+As shown in my modeling notebook, I created a basic simulation, combining the predictions for each game in the 2018 NBA season. Starting with $10,000, and making a bet each time my models predicted a confident bet (here set at a prediction with > 60% confidence), I show how my model performs informing a betting strategy over the course of the season. 
 
 ![][pooled]
 
-[pooled]: pooled_bets_graph.png
+[pooled]: technical_report_graphs/pooled_bets_graph.png
 
 <a id = 'conclusion'></a>
 ### Conclusion
@@ -164,6 +166,7 @@ Although I was able to achieve a predictive capability with my model high enough
 #### Next Steps: 
 - Oftentimes (particularly since the advent of mobile technology), bookeapers will offer live-betting, offering continually updated odds on different aspects of the game. I would want to look at using Bayesian statistics to predict the final over/under for a game, with halftime statistics for a live game.
 - I think there are a number of features, both from an in-game statistical perspective(PER, pace statistics) and from a context standpoint (the distance each team has traveled in the past week) which could be imputed to try and explain more of the variance present in the game totals.
+- I think it would be worthwhile to calculate the rolling mean for the past *x* games and see how imputing an average of a team's stats over a period of time compares to the way I have the previous games' stats imputed now (as a collection of the 3 prior games).
 - An ensemble model may be able to take the various predictions returned by the models I created, in addition to others, and return a more confident prediction on certain games. I'm unsure how much optimization can be done on this dataset to maximize prediction confidence, however, because of the lack of significant correlation between the features and the target.
 
 
