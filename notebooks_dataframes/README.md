@@ -1,1 +1,1 @@
-Folder containing all of the Notebooks for this project, as well as the intermediary dataframes I created when cleaning my data.
+Folder containing all of the Notebooks for this project, the intermediary dataframes I created when cleaning my data, and a data dictionary to explain the features present in my final cleaned dataset.
