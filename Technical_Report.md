@@ -1,6 +1,10 @@
 ## Predicting Totals Bets for NBA Games
 
-Problem: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
+Outline:
+- [Introduction](#intro)
+
+<a id = 'intro'></a>
+Introduction: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
 set by Las Vegas casinos. 
 
 In sports betting, a bookkeeper will create a bet called a total on NBA games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or you can bet an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
