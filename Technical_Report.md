@@ -2,17 +2,21 @@
 
 Outline:
 - [Introduction](#intro)
+- [Dataset](#data)
+- [Conclusion](#conclusion)
 
 <a id = 'intro'></a>
-Introduction: This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
+### Introduction
+This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
 set by Las Vegas casinos. 
 
 In sports betting, a bookkeeper will create a bet called a total on NBA games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or you can bet an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
 
 The goal of this project is to create a model which returns a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
 
-
-Data: I decided to analyze the past 5 season of NBA games for the purposes of this project. 
+<a id = 'data'></a>
+### Data
+I decided to analyze the past 5 season of NBA games for the purposes of this project. 
 
 - For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
 
