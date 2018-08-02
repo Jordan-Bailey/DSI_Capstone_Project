@@ -20,7 +20,7 @@ The goal of this project is to create a model which returns a prediction on whet
 ### Data
 I decided to analyze the past 5 season of NBA games for the purposes of this project. There are 82 games in an NBA season, and 30 teams in the league; I collected data for 6150 games in total. I wanted to collect the the  
 
-- For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season.
+- For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season. In order to run the scrapes continuously, I hosted the code on an AWS server.
 
 - With a dataset comprised of the past 5 seasons of NBA game data, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
 
@@ -62,7 +62,7 @@ Accounting for Time Series Data:
 [heat]: technical_report_graphs/heat_map.png
 
 
-- My baseline scores for each class of outcomes, Over, Under, and Push, for the past 5 NBA seasons, are represented in the below plot. Pushes occur much more infrequently than the other outcomes, occurring in about 1.4% of games.
+- Pushes occur more infrequently than the other outcomes, occurring in about 1.4% of games, compared to around 49% for Over and Under outcomes. 
 
 ![][frequency]
 
