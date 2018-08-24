@@ -136,7 +136,8 @@ The features with the greatest importance in my model are shown below:
 
 Below are the plots of my confident bet predictions, shown as how the predictions change as the threshold for what is considered "confident" is changed. The line at 54% for the mean of confident predictions represents a level below which betting on the confident predictions would not return money. The baseline for predicting the total of a game stands at around 49% for both overs and unders. Considering a typical bet, where one bets $105 to win $100, 54% represents a level at which the number of confident bets that win overcomes the loss of money from the terms of the bet.
 
-##### __Over__
+##### Over
+
 
 ![][under]
 
