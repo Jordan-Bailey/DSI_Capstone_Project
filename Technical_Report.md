@@ -141,12 +141,12 @@ Below are the plots of my confident bet predictions, shown as how the prediction
 
 ![][under]
 
-[under]: under_bet_graph.png
+[under]: UNDER_model_graphs.png
 
 
 ![][over]
 
-[over]: over_bet_graph.png
+[over]: OVER_model_graphs.png
 
 
 
