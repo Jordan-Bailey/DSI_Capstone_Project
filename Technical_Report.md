@@ -12,7 +12,7 @@ Outline:
 This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
 set by Las Vegas casinos. 
 
-In sports betting, a bookkeeper will create a bet called a total on NBA games. The total is set at the predicted total score for the game; with knowledge of this total, you are able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or you can bet an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
+In sports betting, a bookkeeper will create a bet based on the point total of an NBA game. The point total is set at the number which the bookkeeper predicts will be the final combined score for the game; with knowledge of this total, one is able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
 
 The goal of this project is to create a model which returns a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
 
@@ -131,10 +131,13 @@ The features with the greatest importance in my model are shown below:
 |:--------------:|:-----------:|:-------:|-------------|---------|--------------------|------------------------|---------|
 | Feature Weight | -0.2197     | -0.2197 | -0.1873     | -0.1873 | -0.1590            | -0.1590                | -0.1551 |
 
-- Interesting that the game total score for the previous game takes on a negative weight in my model. I do not think the feature loadings in my model are entirely interpretable; stats from previous games seems to be both positively and negatively affecting my model's prediction for a game to be over or under. My best guess for the variance my model is accounting for is that there is measurable shift in how the bookkeeper is adjusting the lines to account for the previous games results.
+- Interesting that the game total score for the previous game takes on a negative weight in my model. I do not think the feature loadings in my model offer significant insight into features that makes sense in terms of explaining the variabiltiy captured by the models; stats from previous games seems to be both positively and negatively affecting my model's prediction for a game to be either over or under. My best guess for the variance my model is accounting for is that there is measurable shift in how the bookkeeper is adjusting the lines to account for the previous games results.
 
 
 Below are the plots of my confident bet predictions, shown as how the predictions change as the threshold for what is considered "confident" is changed. The line at 54% for the mean of confident predictions represents a level below which betting on the confident predictions would not return money. The baseline for predicting the total of a game stands at around 49% for both overs and unders. Considering a typical bet, where one bets $105 to win $100, 54% represents a level at which the number of confident bets that win overcomes the loss of money from the terms of the bet.
+
+##### Over
+
 
 ![][under]
 
