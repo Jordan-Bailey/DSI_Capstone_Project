@@ -16,6 +16,6 @@ Notebooks:
 
  - [Notebook 5](notebooks_dataframes/5_EDA_pt_2.ipynb): Extended EDA
 
- - [Notebook 6](notebooks_dataframes/6_Modeling.ipynb): Modeling
+ - [Notebook 6](notebooks_dataframes/6_Modeling_notebook.ipynb): Modeling
 
 
