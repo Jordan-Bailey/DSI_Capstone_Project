@@ -18,7 +18,7 @@ The goal of this project is to create a model which returns a prediction on whet
 
 <a id = 'data'></a>
 ### Data
-I decided to analyze the past 5 season of NBA games for the purposes of this project. There are 82 games in an NBA season, and 30 teams in the league; I collected data for 6150 games in total.  
+I decided to analyze the past 5 season of NBA games for the purposes of this project. There are 82 games in an NBA season, and 30 teams in the league; I collected data for 6150 games in total. For both of the websites, I used the Python package BeautifulSoup to parse the HTML of the webpages and return the information I needed.
 
 - For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season. In order to run the scrapes continuously, I hosted the code on an AWS server.
 
