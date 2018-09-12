@@ -22,7 +22,7 @@ I decided to analyze the past 5 season of NBA games for the purposes of this pro
 
 - For the basketball data I scraped box scores for every game off of basketball-reference.com. These box score stats are comprised of the counting stats (points, assists, rebounds, etc.) for a basketball game, for both the target team and their opponent. I stored this data as a collection of JSON files, ordered by team and season. 
 - With a dataset comprised of the past 5 seasons of NBA game data, I was able to create a list of dates which NBA games were played on in the past 5 seasons. With the list of dates, I was able to scrape gambling lines off of sportsbookreview.com, querying each date and pulling the historical betting lines for each game on that date. 
--In order to run the scrapes continuously, I hosted the code on an AWS server. In total, the scrape of the box scores for the NBA games took ~4 hours (~45 minutes per season), and the scrape of the point totals for each game took around 20 minutes.
+- In order to run the scrapes continuously, I hosted the code on an AWS server. In total, the scrape of the box scores for the NBA games took ~4 hours (~45 minutes per season), and the scrape of the point totals for each game took around 20 minutes.
 
 
 Data Cleaning: The dataset of box scores from basketball-reference.com, and the dataset of betting lines from sportsbookreview.com, were relatively clean to begin with. 
