@@ -10,11 +10,12 @@ Outline:
 <a id = 'intro'></a>
 ### Introduction
 This project attempts to predict whether an NBA game's total score will be over or under a predetermined total line, 
-set by Las Vegas casinos. 
+set by Las Vegas casinos. The goal is to create a model which returns a prediction on whether a game's will likely be over or under the total line. With these predictions and their associated probabilities, I will set a threshold to create a set of bets I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information.
 
-In sports betting, a bookkeeper will create a bet based on the point total of an NBA game. The point total is set at the number which the bookkeeper predicts will be the final combined score for the game; with knowledge of this total, one is able to bet an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy in to help plant either outcome as favorable to the bookkeeper. 
+In sports betting, a bookkeeper will create a bet based on the total final score of an NBA game. Bettors can bet either an "Over," betting that the total score of the game will be higher than the total set by the bookeeper, or an "Under," betting that the total score of the game will be lower than the total set by the bookkeeper. If the game's final total score is 
 
-The goal of this project is to create a model which returns a prediction on whether a game's will likely be over or under the set total line, a then set a threshold to create a set of what I will term "confident bets." With these confident bets, I will create a strategy to (hopefully) profit off of this information. 
+The bookeeper sets the line at a number at which they believes will create action for both "Over" bets and "Under" bets; this strategy helps set either outcome as favorable to the bookkeeper. For a bookkeeper, having a lot of money bet on one team, or in this case on one side of the Over | Under bet, puts them in a riskier position, where they stand to lose a large amount of money (relatively). If possible, bookkeepers would prefer to minimize this risk by having money spread out between both sides of a bet. I say all that to say, the point total set by a sports book doesn't reflect the book's belief in the final total score of a game, but rather the total at which they believe will draw equal action on both sides of a bet. This distinction will be important in interpreting the results of my model.
+ 
 
 <a id = 'data'></a>
 ### Data
