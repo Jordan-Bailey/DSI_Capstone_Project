@@ -1,4 +1,7 @@
-This page is the README for my capstone project. This README will provide references to the locations for my notebooks. For a detailed walkthrough of my project, please see the [Technical Report](Technical_Report.md)
+This page is the README for my capstone project. This README will provide references to the locations for my notebooks, as well as a reference to a Medium article I wrote about the project for a non-technical audience. For a detailed walkthrough of my project, please see the [Technical Report](Technical_Report.md)
+
+Medium Article:
+https://medium.com/@jxbailey23/applying-data-science-to-sports-betting-1856ac0b2cab
 
 Data: 
  - NBA Box Scores: [Basketball Reference](https://www.basketball-reference.com/)
